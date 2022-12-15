@@ -13,10 +13,13 @@ const typeorm_1 = require("typeorm");
 const MarkerInfo_entity_1 = require("../Entity/MarkerInfo.entity");
 let MarkerInfoRepository = class MarkerInfoRepository extends typeorm_1.Repository {
     async createMarkerInfo(createMarkerInfo) {
-        const { imgName, text } = createMarkerInfo;
+        const { title, imgName, text, latitude, longtitude } = createMarkerInfo;
         const wspost = this.create({
+            title,
             imgName,
             text,
+            latitude,
+            longtitude,
         });
         await this.save(wspost);
         return wspost;

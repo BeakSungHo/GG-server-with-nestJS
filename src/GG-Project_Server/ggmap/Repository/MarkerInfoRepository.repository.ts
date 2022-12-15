@@ -8,10 +8,14 @@ import { MarkerInfo } from '../Entity/MarkerInfo.entity';
 export class MarkerInfoRepository extends Repository<MarkerInfo> {
             
     async createMarkerInfo(createMarkerInfo):Promise<MarkerInfo>{
-        const {imgName,text}=createMarkerInfo
+        const {title,imgName,text,latitude,longtitude}=createMarkerInfo
         const wspost=this.create({
+            title,
             imgName,
             text,
+            latitude,
+            longtitude,
+
         })
         await this.save(wspost);
 

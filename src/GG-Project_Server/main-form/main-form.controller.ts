@@ -14,15 +14,19 @@ export class MainFormController {
     return ;
   }
 
+  //이미지가 파싱된 상태로 출력함 
   @Get('/getimag')
   getAllImg():Promise<string[]>{
     return this.MainFormService.getAllImg();
   }
-  @Get('/test')
+
+  //모든데이터를 출력받음
+  @Get('/all')
   getTest(): Promise<WSPost[]> {
     return this.MainFormService.getAllPost();
   }
 
+  // 입력하는 곳 받는 데이터는 {title, imgName, description}:string
   @Post('/test')
   postTest(@Body() createWSPost):Promise<WSPost>{
     return this.MainFormService.createWSPost(createWSPost);
