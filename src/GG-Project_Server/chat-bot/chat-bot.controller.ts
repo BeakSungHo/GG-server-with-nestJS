@@ -29,8 +29,8 @@ export class ChatBotController {
     
     //채팅에관한 get post patch등 처리를 받는 곳
     @Get('/')
-    getContactInformation(): Promise<string[]>{
-      return this.ChatBotService.getContactInformation();
+    getContactInformation(){
+      return "this.ChatBotService.getContactInformation()";
     }
     
 

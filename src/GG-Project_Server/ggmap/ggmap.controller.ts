@@ -7,9 +7,10 @@ export class GgmapController {
   constructor(private GgmapService:GgmapService ){}
 
     @Get('/')
-    getmap():Promise<string[]>{
-      return ;
+    getmap(){
+      return "아아아";
     }
+    
     @Post('/')
     Postmap():Promise<string[]>{
       return ;
