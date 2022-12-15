@@ -12,12 +12,11 @@ const typeorm_ex_module_1 = require("../Custom/typeorm-ex.module");
 const ggmap_controller_1 = require("./ggmap.controller");
 const ggmap_service_1 = require("./ggmap.service");
 const MarkerInfoRepository_repository_1 = require("./Repository/MarkerInfoRepository.repository");
-const MarkerRepository_repository_1 = require("./Repository/MarkerRepository.repository");
 let GgmapModule = class GgmapModule {
 };
 GgmapModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_ex_module_1.TypeOrmExModule.forCustomRepository([MarkerRepository_repository_1.MarkerRepository, MarkerInfoRepository_repository_1.MarkerInfoRepository])],
+        imports: [typeorm_ex_module_1.TypeOrmExModule.forCustomRepository([MarkerInfoRepository_repository_1.MarkerInfoRepository])],
         controllers: [ggmap_controller_1.GgmapController],
         providers: [ggmap_service_1.GgmapService]
     })
