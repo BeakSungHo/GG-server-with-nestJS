@@ -17,7 +17,11 @@ __decorate([
     (0, typeorm_1.PrimaryColumn)(),
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], MarkerInfo.prototype, "key", void 0);
+], MarkerInfo.prototype, "id", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], MarkerInfo.prototype, "title", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
@@ -26,6 +30,14 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], MarkerInfo.prototype, "text", void 0);
+__decorate([
+    (0, typeorm_1.Column)('real'),
+    __metadata("design:type", Number)
+], MarkerInfo.prototype, "latitude", void 0);
+__decorate([
+    (0, typeorm_1.Column)('real'),
+    __metadata("design:type", Number)
+], MarkerInfo.prototype, "longtitude", void 0);
 MarkerInfo = __decorate([
     (0, typeorm_1.Entity)()
 ], MarkerInfo);

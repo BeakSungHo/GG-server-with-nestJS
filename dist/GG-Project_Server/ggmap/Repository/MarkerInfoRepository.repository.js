@@ -22,8 +22,8 @@ let MarkerInfoRepository = class MarkerInfoRepository extends typeorm_1.Reposito
         return wspost;
     }
     async getMarkerInfo(getID) {
-        const { key } = getID;
-        const MarkerInfo = await this.getMarkerInfoBykey(key);
+        const { id } = getID;
+        const MarkerInfo = await this.getMarkerInfoBykey(id);
         MarkerInfo.imgName = `https://wsggbucket.s3.ap-northeast-2.amazonaws.com/${MarkerInfo.imgName}`;
         return MarkerInfo;
     }
@@ -31,10 +31,10 @@ let MarkerInfoRepository = class MarkerInfoRepository extends typeorm_1.Reposito
         const allMarkerInfoList = await this.find();
         return allMarkerInfoList;
     }
-    async getMarkerInfoBykey(key) {
-        const found = await this.findOne({ where: { key } });
+    async getMarkerInfoBykey(id) {
+        const found = await this.findOne({ where: { id } });
         if (!found) {
-            throw new common_1.NotFoundException(`현재 등록되지않는 마크 => ${key}`);
+            throw new common_1.NotFoundException(`현재 등록되지않는 마크 => ${id}`);
         }
         return found;
     }

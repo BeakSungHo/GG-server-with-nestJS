@@ -19,8 +19,8 @@ export class MarkerInfoRepository extends Repository<MarkerInfo> {
     }
 
     async getMarkerInfo(getID):Promise<MarkerInfo>{
-        const {key}=getID
-        const MarkerInfo =await this.getMarkerInfoBykey(key)
+        const {id}=getID
+        const MarkerInfo =await this.getMarkerInfoBykey(id)
         MarkerInfo.imgName=`https://wsggbucket.s3.ap-northeast-2.amazonaws.com/${MarkerInfo.imgName}`;
 
         return MarkerInfo;
@@ -34,10 +34,10 @@ export class MarkerInfoRepository extends Repository<MarkerInfo> {
     }
 
 
-    async getMarkerInfoBykey(key: number):Promise<MarkerInfo>{//해당아이디가 있는지 확인하는 함수
-        const found = await this.findOne({ where: {key} });
+    async getMarkerInfoBykey(id: number):Promise<MarkerInfo>{//해당아이디가 있는지 확인하는 함수
+        const found = await this.findOne({ where: {id} });
         if (!found) {
-          throw new NotFoundException(`현재 등록되지않는 마크 => ${key}`);
+          throw new NotFoundException(`현재 등록되지않는 마크 => ${id}`);
         }
         return found;
       }

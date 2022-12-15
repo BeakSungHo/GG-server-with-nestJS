@@ -19,10 +19,11 @@ const WSPasingContactInformation = async () => {
         const data3 = data2.replace(/ /g, '').split(/\n/).filter((element) => {
             return element !== undefined && element !== null && element !== '';
         });
-        console.log("ㅇㅅㅇ", data3);
-        data3.shift();
-        data3.shift();
-        data3.shift();
+        const test = data2.replace(/ /g, '').split(/\n/).filter((element) => {
+            return element !== undefined && element !== null && element !== '';
+        });
+        console.log("ㅇㅅㅇ", test);
+        data3.splice(0, 3);
         return data3;
     }
     catch (error) {
