@@ -38,4 +38,8 @@ export class PostRepository extends Repository<WSPost> {
 
     return wspost;
   }
+
+  testF(){
+    return
+  }
 }
