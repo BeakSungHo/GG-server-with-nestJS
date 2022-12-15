@@ -4,4 +4,7 @@ import { Repository } from 'typeorm';
 import { ApiMarkers } from '../Entity/ApiMarkers.entitiy';
 
 @CustomRepository(ApiMarkers)
-export class MarkerRepository extends Repository<ApiMarkers> {}
+export class MarkerRepository extends Repository<ApiMarkers> {
+
+    
+}

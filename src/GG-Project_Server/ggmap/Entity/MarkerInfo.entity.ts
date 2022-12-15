@@ -16,8 +16,6 @@ export class MarkerInfo extends BaseEntity {
   imgName: string;
     //https://wsggbucket.s3.ap-northeast-2.amazonaws.com/bori.jpg 의 이름이 키값이 됨 imgName=(key : bori)
     //파싱할경우https://wsggbucket.s3.ap-northeast-2.amazonaws.com/{imgName?}.jpg
-
-
   @Column()
   text: string;
 }
