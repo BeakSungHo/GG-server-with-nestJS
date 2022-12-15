@@ -1,8 +1,7 @@
 import { Body, Controller, Get } from '@nestjs/common';
 import { ChatBotService } from './chat-bot.service';
 
-// 이것은 실험하는 거시요?
-const enjel:string='a';
+
 // 1. 열었을 때 가이드              //?
 // 2. 시나리오 기반의 틀을 제작     //?
 
