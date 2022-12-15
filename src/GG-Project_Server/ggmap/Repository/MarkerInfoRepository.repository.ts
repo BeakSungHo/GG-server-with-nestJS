@@ -1,4 +1,5 @@
 //import { CustomRepository } from 'src/Custom/typeorm-ex.decorator';
+import { NotFoundException } from '@nestjs/common';
 import { CustomRepository } from 'src/GG-Project_Server/Custom/typeorm-ex.decorator';
 import { Repository } from 'typeorm';
 import { MarkerInfo } from '../Entity/MarkerInfo.entity';
@@ -16,6 +17,30 @@ export class MarkerInfoRepository extends Repository<MarkerInfo> {
 
         return wspost;
     }
+
+    async getMarkerInfo(getID):Promise<MarkerInfo>{
+        const {key}=getID
+        const MarkerInfo =await this.getMarkerInfoBykey(key)
+        MarkerInfo.imgName=`https://wsggbucket.s3.ap-northeast-2.amazonaws.com/${MarkerInfo.imgName}`;
+
+        return MarkerInfo;
+    }
+    
+
+    async getAllMarkerInfo():Promise<MarkerInfo[]>{
+        const allMarkerInfoList=await this.find();
+
+        return allMarkerInfoList;
+    }
+
+
+    async getMarkerInfoBykey(key: number):Promise<MarkerInfo>{//해당아이디가 있는지 확인하는 함수
+        const found = await this.findOne({ where: {key} });
+        if (!found) {
+          throw new NotFoundException(`현재 등록되지않는 마크 => ${key}`);
+        }
+        return found;
+      }
     
 }
 

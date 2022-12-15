@@ -8,17 +8,21 @@ export class GgmapController {
 
     @Get('/')
     getmap(){
-      return "야이새끼야ajacnj!";
+      return "에러뜨면 옥상으로 따라와!!🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬ㅍ";
     }
- 
-    @Post('/')
-    Postmap():Promise<string[]>{
-      return ;
+    @Get('/comeonbaby')
+    getMarkerInfo(@Body() getID):Promise<MarkerInfo>{
+      return this.GgmapService.getMarkerInfo(getID);
     }
     
-  @Post('/test')
-  createMarkerInfo(@Body() createMarkerInfo):Promise<MarkerInfo>{
-    return this.GgmapService.createMarkerInfo(createMarkerInfo);
-  }
+    @Get('/test')
+    getAllMarkerInfo():Promise<MarkerInfo[]>{
+      return this.GgmapService.getAllMarkerInfo();
+    }
+
+    @Post('/test')
+    createMarkerInfo(@Body() createMarkerInfo):Promise<MarkerInfo>{
+      return this.GgmapService.createMarkerInfo(createMarkerInfo);
+    }
     
 }
