@@ -10,7 +10,7 @@ export class GgmapController {
     getmap(){
       return "야이새끼야ajacnj!";
     }
-    
+ 
     @Post('/')
     Postmap():Promise<string[]>{
       return ;
