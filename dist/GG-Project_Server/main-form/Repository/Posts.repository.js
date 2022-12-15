@@ -16,6 +16,9 @@ let PostRepository = class PostRepository extends typeorm_1.Repository {
     }
     async getAllPost() {
         const allPostList = await this.find();
+        for (var i in allPostList) {
+            allPostList[i].imgName = `https://wsggbucket.s3.ap-northeast-2.amazonaws.com/${allPostList[i].imgName}`;
+        }
         return allPostList;
     }
     async getAllImg() {

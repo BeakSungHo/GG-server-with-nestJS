@@ -9,7 +9,10 @@ export class PostRepository extends Repository<WSPost> {
     return;
   }
   async getAllPost():Promise<WSPost[]>{
-    const allPostList=await this.find();
+    const allPostList=await this.find()
+    for(var i in allPostList){
+      allPostList[i].imgName= `https://wsggbucket.s3.ap-northeast-2.amazonaws.com/${allPostList[i].imgName}`
+    }
 
     return allPostList;
   }

@@ -14,7 +14,7 @@ export class GgmapController {
     getMarkerInfo(@Body() getID):Promise<MarkerInfo>{
       return this.GgmapService.getMarkerInfo(getID);
     }
-    //
+  
     @Get('/test')
     getAllMarkerInfo():Promise<MarkerInfo[]>{
       return this.GgmapService.getAllMarkerInfo();
