@@ -8,7 +8,7 @@ export class GgmapController {
 
     @Get('/')
     getmap(){
-      return "야이새끼야";
+      return "야이새끼야ajacnj!";
     }
     
     @Post('/')
