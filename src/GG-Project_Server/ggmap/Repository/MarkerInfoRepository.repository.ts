@@ -29,7 +29,6 @@ export class MarkerInfoRepository extends Repository<MarkerInfo> {
 
         return MarkerInfo;
     }
-    
 
     async getAllMarkerInfo():Promise<MarkerInfo[]>{
         const allMarkerInfoList=await this.find();
