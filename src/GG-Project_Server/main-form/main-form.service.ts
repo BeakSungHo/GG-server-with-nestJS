@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { WSPasingContactInformation } from 'WSPasing-Contact-Information';
+import { WSPasingContactInformation } from 'src/GG-Project_Server/main-form/WSPasing-Contact-Information';
 import { WSPost } from './Entity/Posts.entity';
 import { PostRepository } from './Repository/Posts.repository';
 // @PrimaryGeneratedColumn()    타입
