@@ -9,6 +9,7 @@ import { MainFormService } from './main-form.service';
 export class MainFormController {
   constructor(private MainFormService:MainFormService ){}
 
+  
   @Get('/')
   getPost(): Promise<WSPost[]> {
     return ;
@@ -24,6 +25,11 @@ export class MainFormController {
   @Get('/all')
   getTest(): Promise<WSPost[]> {
     return this.MainFormService.getAllPost();
+  }
+  
+  @Get('/tt')
+  get심심이(){
+    return this.MainFormService.get심심이();
   }
 
   // 입력하는 곳 받는 데이터는 {title, imgName, description}:string
