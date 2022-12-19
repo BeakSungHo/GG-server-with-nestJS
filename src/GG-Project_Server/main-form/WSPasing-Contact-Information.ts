@@ -15,8 +15,8 @@ export const WSPasingContactInformation=async(): Promise<string[]> =>{
       ulList[i] = {
         
           // title: $(this).find('tr').text(),
-          vidioLest: $(this).find('div.videoLeft').html(),
-          vidioRight:$(this).find('div.videoRight').html(),
+          title: $(this).find('div.videoLeft').html(),
+          //vidioRight:$(this).find('div.videoRight').html(),
       };
     });
 

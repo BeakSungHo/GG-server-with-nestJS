@@ -11,8 +11,7 @@ const WSPasingContactInformation = async () => {
         const $bodyList = $("div");
         $bodyList.each(function (i, elem) {
             ulList[i] = {
-                vidioLest: $(this).find('div.videoLeft').html(),
-                vidioRight: $(this).find('div.videoRight').html(),
+                title: $(this).find('div.videoLeft').html(),
             };
         });
         const data = ulList.filter(n => n.title);
