@@ -8,11 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatBotService = void 0;
 const common_1 = require("@nestjs/common");
-const WSPasing_Contact_Information_1 = require("./WSPasing-Contact-Information");
+const WSCrawling_Contact_StudentCafeteria_1 = require("./pasing/WSCrawling-Contact-StudentCafeteria");
+const WSPasing_Contact_Information_1 = require("./pasing/WSPasing-Contact-Information");
 const cheerio = require("cheerio");
 let ChatBotService = class ChatBotService {
     getContactInformation() {
         return (0, WSPasing_Contact_Information_1.WSPasingContactInformation)();
+    }
+    getStudentCafeteria() {
+        return (0, WSCrawling_Contact_StudentCafeteria_1.WSCrawlingContactStudentCafeteria)();
     }
 };
 ChatBotService = __decorate([

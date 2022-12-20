@@ -39,7 +39,7 @@ export class ChatBotController {
     }
 
     @Get('/student_cafeteria')
-    getStudentCafeteria():Promise<String[]>{
+    getStudentCafeteria(){
       return this.ChatBotService.getStudentCafeteria();
     }
     

@@ -13,7 +13,7 @@ export class ChatBotService {
                 return WSPasingContactInformation()
         }
         //학생식단의 정보를 받아오는곳
-        getStudentCafeteria():Promise<string[]>{
+        getStudentCafeteria(){
                 return WSCrawlingContactStudentCafeteria()
         }
 

@@ -3,4 +3,5 @@ export declare class ChatBotController {
     private ChatBotService;
     constructor(ChatBotService: ChatBotService);
     getContactInformation(): Promise<string[]>;
+    getStudentCafeteria(): Promise<any[]>;
 }

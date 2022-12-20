@@ -19,6 +19,9 @@ let ChatBotController = class ChatBotController {
     getContactInformation() {
         return this.ChatBotService.getContactInformation();
     }
+    getStudentCafeteria() {
+        return this.ChatBotService.getStudentCafeteria();
+    }
 };
 __decorate([
     (0, common_1.Get)('/'),
@@ -26,6 +29,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ChatBotController.prototype, "getContactInformation", null);
+__decorate([
+    (0, common_1.Get)('/student_cafeteria'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], ChatBotController.prototype, "getStudentCafeteria", null);
 ChatBotController = __decorate([
     (0, common_1.Controller)('chat-bot'),
     __metadata("design:paramtypes", [chat_bot_service_1.ChatBotService])
