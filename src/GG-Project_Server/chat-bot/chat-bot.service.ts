@@ -2,8 +2,13 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { WSCrawlingContactStudentCafeteria } from './pasing/WSCrawling-Contact-StudentCafeteria';
 import { WSPasingContactInformation} from './pasing/WSPasing-Contact-Information';
-const cheerio = require("cheerio");
-const spawn = require("child_process");
+import cheerio from "cheerio";
+import {spawn} from "child_process";
+import express from 'express';
+//const ls = spawn('ls', ['-lh', '/usr']);
+
+
+
 @Injectable()
 export class ChatBotService {
         // controller에서 받은 작업의 처리를 받는 곳
@@ -17,9 +22,42 @@ export class ChatBotService {
                 return WSCrawlingContactStudentCafeteria()
         }
         getSearch(str:any):Promise<string>{
-                const result = require('child_process').spawn('python', [ 'test.py', '뀨잇']);
-                return result
-                //return this.createMarkerInfo(str)
+                const app =express()
+                const port = process.env.PORT||4000;
+                app.get('/',(req,res)=>{
+                        res.send('ok')
+                })
+
+
+
+
+
+                
+                const temperatures = [];
+                const [components, setComponents] = '';
+                const result = spawn('py', ['test.py','카헤얌','20']);
+       //         on(event: 'end', listener: () => void): this;
+                
+                //result.stdout.on('data', function(data) )
+                result.stdout.on('data', (data)=>{
+                        console.log(data);
+                } )
+                result.stdout.on
+              
+                result.stdin.on('end',function(data){
+                        temperatures.push(data);
+
+                })
+                
+                result.stderr.on('data', (data)=> {
+                        console.log(data);
+                        
+                });
+     
+                result.off
+                
+                return;
+                
         }
 
         async createMarkerInfo(str):Promise<string>{
@@ -113,6 +151,12 @@ export class ChatBotService {
                 }
                 //return ;
             }
+
+    
         
+}
+
+function useState<T>(): [any, any] {
+        throw new Error('Function not implemented.');
 }
 
