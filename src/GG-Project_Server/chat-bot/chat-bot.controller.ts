@@ -37,6 +37,10 @@ export class ChatBotController {
     getContactInformation(): Promise<string[]>{
       return this.ChatBotService.getContactInformation();
     }
+    @Get('/search')
+    getSearch(@Body() str): Promise<string>{
+      return this.ChatBotService.getSearch(str);
+    }
 
     @Get('/student_cafeteria')
     getStudentCafeteria(){
